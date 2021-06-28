@@ -1,5 +1,5 @@
 # **Roomie Ride Redux**
->**Roomie Ride** is a trivial ride share scheduling tool intended for roommates, teammates, coworkers, or people who generall interact in proximity to each other on a regular basis. This is also a project for me to try and learn login and account verification methods.
+>**Roomie Ride** is a trivial ride share scheduling tool intended for roommates, teammates, coworkers, or people who generall interact in proximity to each other on a regular basis. This is also a project for me to try and learn account creation and login verification methods.
 
 ## **Project Status**
 *(0.0.1)*
