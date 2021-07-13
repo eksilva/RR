@@ -1,9 +1,12 @@
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS rides;
+DROP TABLE IF EXISTS acceptances;
 
 CREATE TABLE users (
   id INT GENERATED ALWAYS AS IDENTITY,
   name VARCHAR(255) NOT NULL,
+  phone INT(10) NOT NULL UNIQUE,
+  created_on TIMESTAMP NOT NULL,
   PRIMARY KEY(id)
 )
 
@@ -12,6 +15,15 @@ CREATE TABLE rides (
   destination VARCHAR(255) NOT NULL,
   time VARCHAR(5) NOT NULL,
   date VARCHAR(8) NOT NULL,
+  FOREIGN KEY(created_by) REFERENCES users(id),
   PRIMARY KEY(id)
 )
 
+CREATE TABLE acceptances (
+  acceptance_id INT GENERATED ALWAYS AS IDENTITY,
+  user_id INT NOT NULL,
+  ride_id INT NOT NULL,
+  FOREIGN KEY(user_id) REFERENCES users(id),
+  FOREIGN KEY(ride_id) REFERENCES rides(id),
+  PRIMARY KEY(acceptance_id)
+)
